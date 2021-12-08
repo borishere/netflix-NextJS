@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextMenu Renders 1`] = `
+<DocumentFragment>
+  <div
+    class="context-menu"
+  >
+    <div
+      aria-label="close-btn"
+      class="context-menu-close-btn"
+    >
+      x
+    </div>
+    <div
+      class="context-menu-item"
+    >
+      Edit
+    </div>
+    <div
+      class="context-menu-item"
+    >
+      Delete
+    </div>
+  </div>
+</DocumentFragment>
+`;

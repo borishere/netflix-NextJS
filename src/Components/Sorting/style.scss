@@ -1,0 +1,20 @@
+.sorting {
+  .sorting-title {
+    margin-right: 35px;
+    font-size: 16px;
+    color: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+  }
+
+  .sorting-items {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

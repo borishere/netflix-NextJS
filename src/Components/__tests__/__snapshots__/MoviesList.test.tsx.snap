@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesList Renders 1`] = `
+<DocumentFragment>
+  <ul
+    class="movies-list"
+  />
+</DocumentFragment>
+`;

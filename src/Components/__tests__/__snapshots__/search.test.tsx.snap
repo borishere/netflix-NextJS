@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search 1`] = `
+<DocumentFragment>
+  <div
+    class="search-wrap"
+  >
+    <div
+      class="search-title"
+    >
+      FIND YOUR MOVIE
+    </div>
+    <div
+      class="search-el"
+    >
+      <input
+        class="search-input"
+        placeholder="What do you want to watch?"
+        value=""
+      />
+      <button
+        aria-label="search"
+        class="search-btn"
+      >
+        SEARCH
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

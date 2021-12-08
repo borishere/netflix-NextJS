@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetails Renders 1`] = `
+<DocumentFragment>
+  <div
+    class="top"
+  >
+    <div
+      class="logo-wrap"
+    >
+      <span
+        class="logo-left"
+      >
+        netflix
+      </span>
+      <span
+        class="logo-right"
+      >
+        roulette
+      </span>
+    </div>
+    <img
+      class="search-icon"
+      src="test-file-stub"
+    />
+  </div>
+  <div
+    class="movie-details"
+  >
+    <div
+      class="movie-details-cover"
+    >
+      <img />
+    </div>
+    <div
+      class="movie-details-info"
+    >
+      <div
+        class="title-rating-wrap"
+      >
+        <h2
+          class="movie-details-title"
+        >
+          Thor: The Dark World
+        </h2>
+        <span
+          class="movie-details-rating"
+        >
+          6.7
+        </span>
+      </div>
+      <div
+        class="movie-details-genre"
+      >
+        documentary, comedy
+      </div>
+      <div>
+        <span
+          class="movie-details-year"
+        >
+          2013-10-29
+        </span>
+        <span
+          class="movie-details-runtime"
+        >
+          112min
+        </span>
+      </div>
+      <div
+        class="movie-details-description"
+      >
+        Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

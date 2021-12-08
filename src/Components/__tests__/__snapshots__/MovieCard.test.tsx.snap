@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard Renders 1`] = `
+<DocumentFragment>
+  <li
+    class="movie-item"
+  >
+    <img
+      class="context-btn"
+      src="test-file-stub"
+    />
+    <img
+      src="https://image.tmdb.org/t/p/w500/bnX5PqAdQZRXSw3aX3DutDcdso5.jpg"
+    />
+    <div
+      class="movie-content"
+    >
+      <div
+        class="movie-content-base"
+      >
+        <h2
+          class="movie-title"
+        >
+          Thor: The Dark World
+        </h2>
+        <span
+          class="movie-release-date"
+        >
+          2013-10-29
+        </span>
+      </div>
+      <span
+        class="movie-genres"
+      >
+        documentary, comedy
+      </span>
+    </div>
+  </li>
+</DocumentFragment>
+`;

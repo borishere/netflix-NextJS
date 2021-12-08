@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Renders correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="filter-wrap"
+  >
+    <li
+      class="filter-item active"
+    >
+      ALL
+    </li>
+    <li
+      class="filter-item "
+    >
+      DOCUMENTARY
+    </li>
+    <li
+      class="filter-item "
+    >
+      COMEDY
+    </li>
+    <li
+      class="filter-item "
+    >
+      HORROR
+    </li>
+    <li
+      class="filter-item "
+    >
+      CRIME
+    </li>
+  </ul>
+</DocumentFragment>
+`;

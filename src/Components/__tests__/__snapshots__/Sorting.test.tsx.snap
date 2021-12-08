@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sorting Renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sorting"
+  >
+    <span
+      class="sorting-title"
+    >
+      SORT BY
+    </span>
+    <select
+      aria-label="sorting-select"
+      class="sorting-items"
+    >
+      <option
+        value="release_date"
+      >
+        release date
+      </option>
+      <option
+        value="vote_count"
+      >
+        rating
+      </option>
+      <option
+        value="title"
+      >
+        title
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteMovieModal is visible 1`] = `
+<DocumentFragment>
+  <div
+    class="modal delete-movie-modal"
+  >
+    <div
+      class="modal-content"
+    >
+      <img
+        aria-label="close"
+        class="modal-close-btn"
+        src="test-file-stub"
+      />
+      <div
+        class="modal-body"
+      >
+        <h2
+          class="modal-title"
+        >
+          DELETE MOVIE
+        </h2>
+        <p>
+          Are you sure you want to delete this movie?
+        </p>
+        <div
+          class="modal-buttons"
+        >
+          <button
+            class="submit-btn"
+          >
+            CONFIRM
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

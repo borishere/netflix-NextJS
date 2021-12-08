@@ -1,0 +1,16 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 90px;
+  background-color: #232323;
+
+  .filters-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .movies-found-label {
+    margin-top: 50px;
+  }
+}

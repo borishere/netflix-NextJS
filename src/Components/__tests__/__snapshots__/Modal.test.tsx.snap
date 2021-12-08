@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal is visible 1`] = `
+<DocumentFragment>
+  <div
+    class="modal add-movie-modal"
+  >
+    <div
+      class="modal-content"
+    >
+      <img
+        aria-label="close"
+        class="modal-close-btn"
+        src="test-file-stub"
+      />
+      <div
+        class="modal-body"
+      >
+        <div>
+          content
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

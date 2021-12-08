@@ -1,0 +1,52 @@
+.search-icon {
+  cursor: pointer;
+}
+
+.movie-details {
+  .title-rating-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &-title {
+    font-weight: 300;
+    font-size: 40px;
+    margin: 0 30px 0 0;
+  }
+
+  &-rating {
+    padding: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+  }
+
+  &-genre {
+    margin: 10px 0 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+
+  &-year {
+    margin-right: 51px;
+  }
+
+  &-year,
+  &-runtime {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #f65261;
+  }
+
+  &-description {
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+}

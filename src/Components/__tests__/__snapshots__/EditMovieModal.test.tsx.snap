@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditMovieModal is visible 1`] = `
+<DocumentFragment>
+  <div
+    class="modal edit-movie-modal"
+  >
+    <div
+      class="modal-content"
+    >
+      <img
+        aria-label="close"
+        class="modal-close-btn"
+        src="test-file-stub"
+      />
+      <div
+        class="modal-body"
+      >
+        <h2
+          class="modal-title"
+        >
+          EDIT MOVIE
+        </h2>
+        <form
+          action="#"
+          class="modal-form"
+        >
+          <div
+            class="modal-form__item-wrap"
+          >
+            <div
+              class="modal-form__item long"
+            >
+              <label>
+                TITLE
+              </label>
+              <input
+                aria-label="title-input"
+                class="modal-form__item-input"
+                name="title"
+                type="text"
+                value="Thor: The Dark World"
+              />
+            </div>
+            <div
+              class="modal-form__item"
+            >
+              <label>
+                RELEASE DATE
+              </label>
+              <input
+                aria-label="date-input"
+                class="modal-form__item-input"
+                name="release_date"
+                placeholder="Select Date"
+                type="date"
+                value="2013-10-29"
+              />
+            </div>
+          </div>
+          <div
+            class="modal-form__item-wrap"
+          >
+            <div
+              class="modal-form__item long"
+            >
+              <label>
+                MOVIE URL
+              </label>
+              <input
+                aria-label="url-input"
+                class="modal-form__item-input"
+                name="poster_path"
+                placeholder="https://"
+                type="text"
+                value="https://image.tmdb.org/t/p/w500/bnX5PqAdQZRXSw3aX3DutDcdso5.jpg"
+              />
+            </div>
+            <div
+              class="modal-form__item"
+            >
+              <label>
+                RATING
+              </label>
+              <input
+                aria-label="rating-input"
+                class="modal-form__item-input"
+                name="vote_average"
+                placeholder="7.8"
+                type="number"
+                value="6.7"
+              />
+            </div>
+          </div>
+          <div
+            class="modal-form__item-wrap"
+          >
+            <div
+              class="modal-form__item long"
+            >
+              <label>
+                GENRE
+              </label>
+              <select
+                aria-label="genres-select"
+                class="modal-form__item-input"
+                multiple=""
+                name="genres"
+                placeholder="Select Genre"
+              >
+                <option
+                  value="Comedy"
+                >
+                  Comedy
+                </option>
+                <option
+                  value="Drama"
+                >
+                  Drama
+                </option>
+                <option
+                  value="Romance"
+                >
+                  Romance
+                </option>
+              </select>
+            </div>
+            <div
+              class="modal-form__item"
+            >
+              <label>
+                RUNTIME
+              </label>
+              <input
+                aria-label="runtime-input"
+                class="modal-form__item-input"
+                name="runtime"
+                placeholder="minutes"
+                type="number"
+                value="112"
+              />
+            </div>
+          </div>
+          <div
+            class="modal-form__item"
+          >
+            <label>
+              OVERVIEW
+            </label>
+            <textarea
+              aria-label="overview-input"
+              class="modal-form__item-input"
+              name="overview"
+              placeholder="movie description"
+              rows="6"
+            >
+              Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.
+            </textarea>
+          </div>
+          <div
+            class="modal-buttons"
+          >
+            <button
+              class="reset-btn"
+              type="reset"
+            >
+              RESET
+            </button>
+            <button
+              class="submit-btn"
+              type="submit"
+            >
+              SUBMIT
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

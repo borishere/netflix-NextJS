@@ -1,0 +1,39 @@
+.modal-form {
+  margin-top: 30px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    &-wrap {
+      display: flex;
+    }
+
+    &.long {
+      flex: 1;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.888889px;
+      color: #f65261;
+      mix-blend-mode: normal;
+      opacity: 0.8;
+    }
+
+    &-input {
+      background: rgba(50, 50, 50, 0.948044);
+      mix-blend-mode: normal;
+      opacity: 0.8;
+      border-radius: 4px;
+      border-style: unset;
+      padding: 16px;
+      font-size: 20px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+  }
+}
