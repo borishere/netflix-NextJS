@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 import { EditMovieModal } from '../../Components/EditMovieModal/EditMovieModal';
 import { DeleteMovieModal } from '../../Components/DeleteMovieModal/DeleteMovieModal';
