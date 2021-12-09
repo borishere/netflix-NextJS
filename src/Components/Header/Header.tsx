@@ -22,7 +22,7 @@ export const Header: FC<Props> = ({ selectedMovie }) => {
             <Logo />
             <button className={styles['add-movie-btn']} onClick={() => context.setShowAddMovieModal(true)}>+ ADD MOVIE</button>
           </div>
-          {/* <SearchForm /> */}
+          <SearchForm />
         </>
       )}
     </div>

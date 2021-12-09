@@ -4,7 +4,7 @@ import { Igenre } from '../../Models/models';
 import { Filter } from '../Filter/Filter';
 import { MoviesList } from '../MoviesList/MoviesList';
 import { Sorting } from '../Sorting/Sorting';
-import './style.scss';
+import styles from './Body.module.scss';
 
 export const genresList: Igenre[] = [
   { name: 'all', active: true },
@@ -14,19 +14,16 @@ export const genresList: Igenre[] = [
   { name: 'crime', active: false }
 ];
 
-interface Props {
-}
-
-export const Body: FC<Props> = () => {
+export const Body: FC = () => {
   const { movies } = useCachedMovies();
 
   return (
-    <div className='body'>
-      <div className='filters-wrap'>
+    <div className={styles['body']}>
+      <div className={styles['filters-wrap']}>
         <Filter genresList={genresList} />
         <Sorting />
       </div>
-      <div className='movies-found-label'>
+      <div className={styles['movies-found-label']}>
         {`${movies?.length} movies found`}
       </div>
       <MoviesList />

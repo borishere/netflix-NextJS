@@ -1,11 +1,10 @@
 import React, { FC, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ContextMenu } from '../ContextMenu/ContextMenu';
-// @ts-ignore
-import contextIcon from '../../Images/item-context.svg';
+import contextIcon from '../../../public/item-context.svg';
 import { Imovie } from '../../Models/models';
 import { addParamToExistsSearchParams } from '../../common/utils';
-import './style.scss';
+import { useRouter } from 'next/router';
+import styles from './MovieCard.module.scss';
 
 interface Props {
   movie: Imovie;
@@ -13,34 +12,36 @@ interface Props {
 
 export const MovieCard: FC<Props> = ({ movie }) => {
   const [showContextMenu, setShowContextMenu] = useState<boolean>(false);
-  const navigate = useNavigate();
+  const { push } = useRouter();
 
   const onMovieSelect = () => {
     const params = addParamToExistsSearchParams('movie', movie.id.toString());
 
-    navigate({ search: params.toString() });
+    push({ search: params.toString() });
   };
 
   return (
-    <li className='movie-item' onClick={onMovieSelect}>
+    <li className={styles['movie-item']} onClick={onMovieSelect}>
       <img
-        className='context-btn'
+        className={styles['context-btn']}
         src={contextIcon}
         onClick={() => setShowContextMenu(!showContextMenu)}
       />
+
       <img src={movie?.poster_path} />
+
       {showContextMenu && (
         <ContextMenu
           setShow={setShowContextMenu}
           movie={movie}
         />
       )}
-      <div className='movie-content'>
-        <div className='movie-content-base'>
-          <h2 className='movie-title'>{movie?.title}</h2>
-          <span className='movie-release-date'>{movie?.release_date}</span>
+      <div className={styles['movie-content']}>
+        <div className={styles['movie-content-base']}>
+          <h2 className={styles['movie-title']}>{movie?.title}</h2>
+          <span className={styles['movie-release-date']}>{movie?.release_date}</span>
         </div>
-        <span className='movie-genres'>{movie?.genres?.map((genre, i) => `${genre}${i < movie.genres.length - 1 ? ', ' : ''}`)}</span>
+        <span className={styles['movie-genres']}>{movie?.genres?.map((genre, i) => `${genre}${i < movie.genres.length - 1 ? ', ' : ''}`)}</span>
       </div>
     </li>
   );

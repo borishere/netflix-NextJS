@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 import { ErrorMessage, Field, Form } from 'formik';
-import './ModalForm.scss';
+import styles from './ModalForm.module.scss';
 
 export const ModalForm: FC = () => {
   return (
-    <Form className='modal-form'>
-      <div className='modal-form__item-wrap'>
-        <div className='modal-form__item long'>
+    <Form className={styles['modal-form']}>
+      <div className={styles['modal-form__item-wrap']}>
+        <div className={styles['modal-form__item long']}>
           <label>TITLE</label>
           <Field
-            className='modal-form__item-input'
+            className={styles['modal-form__item-input']}
             type='text'
             name='title'
             aria-label='title-input'
@@ -17,10 +17,10 @@ export const ModalForm: FC = () => {
           <ErrorMessage name='title' aria-label='titleError' component='div' />
         </div>
 
-        <div className='modal-form__item'>
+        <div className={styles['modal-form__item']}>
           <label>RELEASE DATE</label>
           <Field
-            className='modal-form__item-input'
+            className={styles['modal-form__item-input']}
             type='date'
             name='release_date'
             placeholder='Select Date'
@@ -30,11 +30,11 @@ export const ModalForm: FC = () => {
         </div>
       </div>
 
-      <div className='modal-form__item-wrap'>
-        <div className='modal-form__item long'>
+      <div className={styles['modal-form__item-wrap']}>
+        <div className={styles['modal-form__item long']}>
           <label>MOVIE URL</label>
           <Field
-            className='modal-form__item-input'
+            className={styles['modal-form__item-input']}
             type='text'
             name='poster_path'
             placeholder='https://'
@@ -43,10 +43,10 @@ export const ModalForm: FC = () => {
           <ErrorMessage name='poster_path' component='div' aria-label='urlError'/>
         </div>
 
-        <div className='modal-form__item'>
+        <div className={styles['modal-form__item']}>
           <label>RATING</label>
           <Field
-            className='modal-form__item-input'
+            className={styles['modal-form__item-input']}
             type='number'
             name='vote_average'
             placeholder='7.8'
@@ -57,11 +57,11 @@ export const ModalForm: FC = () => {
         </div>
       </div>
 
-      <div className='modal-form__item-wrap'>
-        <div className='modal-form__item long'>
+      <div className={styles['modal-form__item-wrap']}>
+        <div className={styles['modal-form__item long']}>
           <label>GENRE</label>
           <Field
-            className='modal-form__item-input'
+            className={styles['modal-form__item-input']}
             as='select'
             name='genres'
             multiple
@@ -75,10 +75,10 @@ export const ModalForm: FC = () => {
           <ErrorMessage name='genres' component='div' aria-label='genreError'/>
         </div>
 
-        <div className='modal-form__item'>
+        <div className={styles['modal-form__item']}>
           <label>RUNTIME</label>
           <Field
-            className='modal-form__item-input'
+            className={styles['modal-form__item-input']}
             type='number'
             name='runtime'
             placeholder='minutes'
@@ -88,10 +88,10 @@ export const ModalForm: FC = () => {
         </div>
       </div>
 
-      <div className='modal-form__item'>
+      <div className={styles['modal-form__item']}>
         <label>OVERVIEW</label>
         <Field
-          className='modal-form__item-input'
+          className={styles['modal-form__item-input']}
           as='textarea'
           rows='6'
           name='overview'
@@ -101,9 +101,9 @@ export const ModalForm: FC = () => {
         <ErrorMessage name='overview' component='div' aria-label='overviewError'/>
       </div>
 
-      <div className='modal-buttons'>
-        <button className='reset-btn' type='reset'>RESET</button>
-        <button className='submit-btn' type='submit'>SUBMIT</button>
+      <div className={styles['modal-buttons']}>
+        <button className={styles['reset-btn']} type='reset'>RESET</button>
+        <button className={styles['submit-btn']} type='submit'>SUBMIT</button>
       </div>
     </Form>
   );

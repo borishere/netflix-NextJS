@@ -1,8 +1,8 @@
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-// import { useNavigate } from 'react-router';
 import { deleteParamFromExistsSearchParams } from '../../common/utils';
-// @ts-ignore
-import searchButton from '../../Images/Search-Button.svg';
+import searchButton from '../../../public/Search-Button.svg';
 import { Imovie } from '../../Models/models';
 import { Logo } from '../Logo/Logo';
 import styles from './MovieDetails.module.scss';
@@ -12,12 +12,12 @@ interface Props {
 }
 
 export const MovieDetails: FC<Props> = ({ selectedMovie }) => {
-  const navigate = useNavigate();
+  const { push } = useRouter();
 
   const onSetSearchMode = () => {
     const params = deleteParamFromExistsSearchParams('movie');
 
-    navigate({ search: params.toString() });
+    push({ search: params.toString() });
   };
 
   return (

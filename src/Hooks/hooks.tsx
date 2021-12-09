@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 // import { useSearchParams, useParams } from 'react-router-dom';
@@ -12,24 +13,24 @@ export const useTitle = (title: string = '') => {
 };
 
 export const useCachedMovies = () => {
-  const { searchQuery } = useParams();
-  const [searchParams] = useSearchParams();
-  const genre = searchParams.get('genre');
-  const sortBy = searchParams.get('sortBy');
+  const { query: searchQuery } = useRouter();
+
+  const searchParam = searchQuery.title?.[0] as string;
+  const genreQuery = searchQuery.genre as string;
+  const sortByQuery = searchQuery.sortBy as string;
 
   const queryParams: IGetMoviesArgs = {};
 
-  if (genre) {
-    queryParams['filter'] = genre;
+  if (genreQuery) {
+    queryParams['filter'] = genreQuery;
   }
-
-  if (sortBy) {
-    queryParams['sortBy'] = sortBy;
+  if (sortByQuery) {
+    queryParams['sortBy'] = sortByQuery;
     queryParams['sortOrder'] = 'asc';
   }
 
-  if (searchQuery) {
-    queryParams['search'] = searchQuery;
+  if (searchParam) {
+    queryParams['search'] = searchParam;
     queryParams['searchBy'] = 'title';
   }
 

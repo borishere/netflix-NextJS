@@ -1,11 +1,10 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../Hooks/hooks';
 import { Igenre } from '../../Models/models';
 import { setFilter } from '../../app/moviesSlice';
-import { useSearchParams } from 'react-router-dom';
 import { addParamToExistsSearchParams, deleteParamFromExistsSearchParams } from '../../common/utils';
-import './style.scss';
+import { useRouter } from 'next/router';
+import styles from './Filter.module.scss';
 
 interface Props {
   genresList: Igenre[];
@@ -14,11 +13,10 @@ interface Props {
 export const Filter: FC<Props> = ({ genresList }) => {
   const [genres, setGenres] = useState<Igenre[]>(genresList);
 
-  const [searchParams] = useSearchParams();
-  const genre = searchParams.get('genre');
-
+  const { query, push } = useRouter();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+
+  const genreQuery = query.genre as string;
 
   const genreClickHandler = useCallback((name: string): void => {
     const updatedGenres = genres.map((genre) => {
@@ -37,14 +35,8 @@ export const Filter: FC<Props> = ({ genresList }) => {
       params = addParamToExistsSearchParams('genre', name);
     }
 
-    navigate({ search: params.toString() });
-  }, [navigate]);
-
-  useEffect(() => {
-    if (genre) {
-      genreClickHandler(genre);
-    }
-  }, [genre, genreClickHandler]);
+    push({ search: params.toString() });
+  }, [push]);
 
   useEffect(() => {
     const preparedGenres = genres
@@ -54,12 +46,24 @@ export const Filter: FC<Props> = ({ genresList }) => {
     dispatch(setFilter(preparedGenres));
   }, [genres, dispatch]);
 
+  useEffect(() => {
+    if (genreQuery) {
+      const updatedGenres = genres.map((genre) => {
+        genre.active = genre.name === genreQuery;
+
+        return genre;
+      });
+
+      setGenres([...updatedGenres]);
+    }
+  }, [genreQuery, genreClickHandler]);
+
   return (
-    <ul className='filter-wrap'>
+    <ul className={styles['filter-wrap']}>
       {genres.map((genre) => (
         <li
           key={genre.name}
-          className={`filter-item ${genre.active ? 'active' : ''}`}
+          className={`${styles['filter-item']} ${genre.active ? styles.active : ''}`}
           onClick={() => genreClickHandler(genre.name)}
         >
           {genre.name.toUpperCase()}

@@ -39,7 +39,6 @@ const axiosBaseQuery =
       }
     };
 
-
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
   baseQuery: axiosBaseQuery({ baseUrl: BASE_API_URL }),
@@ -115,4 +114,4 @@ export const {
   util: { getRunningOperationPromises }
 } = moviesApi;
 
-export const { getMovies } = moviesApi.endpoints;
+export const { getMovies, getMovie } = moviesApi.endpoints;

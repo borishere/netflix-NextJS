@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import ReactDOM from 'react-dom';
-// @ts-ignore
-import closeButton from '../../Images/Close-Button.svg';
-import './style.scss';
+import closeButton from '../../../public/Close-Button.svg';
+import styles from './Modal.module.scss';
 
 export interface ModalProps {
   isShown: boolean;
@@ -17,19 +16,19 @@ export const Modal: FC<ModalProps> = ({ isShown, show, children, modalClass }) =
 
   return (
     ReactDOM.createPortal(
-      <div className={`modal ${modalClass? modalClass : ''}`}>
-        <div className='modal-content'>
+      <div className={`${styles.modal} ${modalClass? modalClass : ''}`}>
+        <div className={styles['modal-content']}>
           <img
-            className='modal-close-btn'
+            className={styles['modal-close-btn']}
             src={closeButton}
             onClick={() => show(false)}
             aria-label='close'
           />
-          <div className='modal-body'>
+          <div className={styles['modal-body']}>
             {children}
           </div>
         </div>
       </div>,
-      document.getElementById('root') as Element
+      document.getElementById('__next') as Element
     ));
 };

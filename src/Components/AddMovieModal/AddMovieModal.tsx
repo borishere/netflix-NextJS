@@ -4,7 +4,7 @@ import { ImovieBase, validationSchema } from '../../Models/models';
 import { useAddMovieMutation } from '../../services/movies';
 import { Modal, ModalProps } from '../Modal/Modal';
 import { ModalForm } from '../ModalForm/ModalForm';
-import './addMovieModal.scss';
+import styles from './AddMovieModal.module.scss';
 
 export const defaultMovie: ImovieBase = {
   title: '',
@@ -29,7 +29,7 @@ export const AddMovieModal: FC<ModalProps> = ({ ...props }) => {
     <Modal modalClass='add-movie-modal' {...props}>
       <>
         {isLoading && <span>Adding...</span>}
-        <h2 className='modal-title'>ADD MOVIE</h2>
+        <h2 className={styles['modal-title']}>ADD MOVIE</h2>
         <Formik<ImovieBase>
           initialValues={defaultMovie}
           validationSchema={validationSchema}

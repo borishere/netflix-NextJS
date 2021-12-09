@@ -1,22 +1,22 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { KeyboardEvent, useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import './style.scss';
+import styles from './Search.module.scss';
 
 export const SearchForm = () => {
   const [value, setValue] = useState<string>('');
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const { searchQuery } = useParams();
+  const searchParam = router.query.title?.[0] as string;
 
   useEffect(() => {
-    if (searchQuery) {
-      setValue(searchQuery);
+    if (searchParam) {
+      setValue(searchParam);
     }
-  }, [searchQuery]);
+  }, [searchParam]);
 
   const searchHandler = () => {
-    navigate(`search/${value}`);
+    router.push(`search/${value}`);
   };
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -26,18 +26,18 @@ export const SearchForm = () => {
   };
 
   return (
-    <div className='search-wrap'>
-      <div className='search-title'>FIND YOUR MOVIE</div>
-      <div className='search-el'>
+    <div className={styles['search-wrap']}>
+      <div className={styles['search-title']}>FIND YOUR MOVIE</div>
+      <div className={styles['search-el']}>
         <input
-          className='search-input'
+          className={styles['search-input']}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder='What do you want to watch?'
           onKeyDown={(e) => onKeyDown(e)}
         />
         <button
-          className='search-btn'
+          className={styles['search-btn']}
           onClick={searchHandler}
           aria-label='search'
         >

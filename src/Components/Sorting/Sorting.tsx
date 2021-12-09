@@ -1,17 +1,18 @@
 import React, { FC, useEffect, useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
 import { initialState } from '../../app/moviesSlice';
 import { useAppDispatch } from '../../Hooks/hooks';
 import { setSortBy } from '../../app/moviesSlice';
 import { addParamToExistsSearchParams } from '../../common/utils';
-import './style.scss';
+import { useRouter } from 'next/router';
+import styles from './Sorting.module.scss';
 
 export const Sorting: FC = () => {
   const [value, setValue] = useState<string>(initialState.sortBy);
-  const [searchParams] = useSearchParams();
-  const sortBy = searchParams.get('sortBy');
+
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  const { query, push } = useRouter();
+
+  const sortByQuery = query.sortBy as string;
 
   const onSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
@@ -19,7 +20,7 @@ export const Sorting: FC = () => {
 
     const params = addParamToExistsSearchParams('sortBy', value);
 
-    navigate({search: params.toString()});
+    push({ search: params.toString() });
   };
 
   useEffect(() => {
@@ -27,18 +28,17 @@ export const Sorting: FC = () => {
   }, [value, dispatch]);
 
   useEffect(() => {
-    if (sortBy) {
-      setValue(sortBy);
+    if (sortByQuery) {
+      setValue(sortByQuery);
     }
-  }, [sortBy]);
-
+  }, [sortByQuery]);
 
   return (
-    <div className='sorting'>
-      <span className='sorting-title'>SORT BY</span>
+    <div className={styles.sorting}>
+      <span className={styles['sorting-title']}>SORT BY</span>
 
       <select
-        className='sorting-items'
+        className={styles['sorting-items']}
         value={value}
         onChange={onSort}
         aria-label='sorting-select'

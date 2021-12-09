@@ -4,7 +4,7 @@ import { Imovie, TNullableMovie, validationSchema } from '../../Models/models';
 import { useEditMovieMutation } from '../../services/movies';
 import { Modal, ModalProps } from '../Modal/Modal';
 import { ModalForm } from '../ModalForm/ModalForm';
-import './editMovieModal.scss';
+import styles from './EditMovieModal.module.scss';
 
 interface EditMovieModalProps extends ModalProps {
   movie: TNullableMovie;
@@ -25,7 +25,7 @@ export const EditMovieModal: FC<EditMovieModalProps> = ({ movie, updateMovie, ..
     <Modal modalClass='edit-movie-modal' {...props}>
       <>
         {isLoading && <span>Editing...</span>}
-        <h2 className='modal-title'>EDIT MOVIE</h2>
+        <h2 className={styles['modal-title']}>EDIT MOVIE</h2>
         {movie && (
           <Formik<Imovie>
             initialValues={movie}
